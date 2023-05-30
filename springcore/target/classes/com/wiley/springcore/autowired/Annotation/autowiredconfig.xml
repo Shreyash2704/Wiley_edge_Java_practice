@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		https://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/util
+		https://www.springframework.org/schema/util/spring-util.xsd">
+		
+
+	<context:annotation-config/>
+	
+	<bean class="com.wiley.springcore.autowired.Annotation.Address" 
+	name="address">
+		<property name="street" value="Mumbai"></property>
+		<property name="city" value="bengluru"/>
+	</bean>
+	
+	<util:list id="phoneNo" list-class="java.util.ArrayList">
+		<value>9011</value>
+				 <value>9211</value>
+				 <value>9821</value>
+				 <value>8821</value>
+	</util:list>
+	
+	<bean class="com.wiley.springcore.autowired.Annotation.Phone" 
+	name="phones">
+		<property name="phones" ref="phoneNo"/>
+	</bean>
+	
+	<bean class="com.wiley.springcore.autowired.Annotation.Course" name="courses">
+		<property name="course">
+			 <map>
+				 <entry key="Skill1" value="Java"/>
+				  <entry key="Skill2" value="Python"/>
+				   <entry key="Skill3" value="Mysql"/>
+			 </map>
+		 </property>
+	</bean>
+	
+	
+
+	<bean class="com.wiley.springcore.autowired.Annotation.Emp" name="emp1"  />
+</beans>

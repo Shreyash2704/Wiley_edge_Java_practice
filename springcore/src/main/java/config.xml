@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 
+	xmlns="http://www.springframework.org/schema/beans"
+ 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ 	xmlns:context="http://www.springframework.org/schema/context"
+ 	xmlns:p="http://www.springframework.org/schema/p"
+ 	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/spring-context.xsd">
+ 
+ 	
+ 	<bean 
+ 	 class="com.wiley.springcore.Address"
+ 	 name="wileyAddress"
+	 p:flat_no="1923"
+	 p:city_name="Mumbai"
+	 p:state_name="Maharashtra"
+	 p:pin_code="400708"
+	 ></bean>
+	 
+	 
+ 	<bean class="com.wiley.springcore.Student" name="wileyStudent1">
+		 <property name="studentId" value="1919"></property>
+		 <property name="studentName" value="Venkat"></property>
+		 <property name="studentAddress">
+			 <ref bean="wileyAddress"/>
+		 </property>
+		 
+		 <property name="studentList">
+			 <list>
+				 <value>20</value>
+				 <value>21</value>
+				 <value>22</value>
+				 <value>23</value>
+			 </list>
+		 </property>
+	 </bean>
+	 
+	 <bean class="com.wiley.springcore.Student" name="wileyStudent2">
+		 <property name="studentId" value="1929"></property>
+		 <property name="studentName" value="Shreyash"></property>
+		 <property name="studentAddress">
+			 <ref bean="wileyAddress"/>
+		 </property>
+		 <property name="studentList">
+			 <list>
+				 <value>120</value>
+				 <value>121</value>
+				 <value>122</value>
+				 <value>123</value>
+			 </list>
+		 </property>
+		 <property name="studentSet">
+			 <set>
+				 <value>12</value>
+				 <value>12</value>
+				 <value>12</value>
+				 <value>12</value>
+			 </set>
+		 </property>
+		 
+		 <property name="studentMap">
+			 <map>
+				 <entry key="Skill1" value="Java"/>
+				  <entry key="Skill2" value="Python"/>
+				   <entry key="Skill3" value="Mysql"/>
+			 </map>
+		 </property>
+		 <property name="prop">
+			 <props>
+				 <prop key="Skill1">Java</prop>
+				  <prop key="Skill2">Python</prop>
+				   <prop key="Skill3">Mysql</prop>
+			 </props>
+		 </property>
+		 
+	 </bean>
+	 
+	
+
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+ </beans>
